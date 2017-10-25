@@ -13,6 +13,7 @@ var db;
 
 // Connect to the database before starting the application server.
 mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
+  console.log("made it inside!");
   if (err) {
     console.log(err);
     process.exit(1);
