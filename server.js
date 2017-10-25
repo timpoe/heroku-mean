@@ -8,6 +8,11 @@ var CONTACTS_COLLECTION = "contacts";
 var app = express();
 app.use(bodyParser.json());
 
+// link to angular build directory
+var distDir = _dirnam + "/dist/";
+app.use(express.static(distDir));
+
+
 // create a database variable outside of the database collection callback to reuse the connection pool in your app... hmm interesting //
 var db;
 
