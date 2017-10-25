@@ -57,12 +57,14 @@ app.get("/api/contacts", function(req, res){
 app.post("/api/contacts", function(req, res) {
   var newContact = req.body;
 
-//in case they didn't enter a new name, you can't post nothing to mongo even if it has low standards /
+//in case they didn't enter a new name, you can't post nothing to mongo even if it has low standards //
+
   if(!req.body.name) {
     handleError(res, "Invalid user input", "Must provide a name.", 400);
   }
 
 // now to really handle writing to the mongo db //
+
   db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to create new contact.");
@@ -74,10 +76,10 @@ app.post("/api/contacts", function(req, res) {
 
 
 /*  "/api/contacts/:id"
-    GET: find contact by id
-    PUT: update contact by id
-    DELETE: deletes contact by id
-*/
+ *    GET: find contact by id
+ *    PUT: update contact by id
+ *    DELETE: deletes contact by id
+ */
 
 app.get("/api/contacts/:id", function(req, res) {
 });
