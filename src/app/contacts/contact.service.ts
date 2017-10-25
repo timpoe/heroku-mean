@@ -10,7 +10,7 @@ export class ContactService {
   constructor (private http: Http) {}
 
   // get("/api/contacts")
-  getContacts(): Promise<void | contact[]> {
+  getContacts(): Promise<void | Contact[]> {
     return this.http.get(this.contactsUrl)
               .toPromise()
               .then(response => response.json() as Contact[])
