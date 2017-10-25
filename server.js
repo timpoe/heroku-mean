@@ -45,7 +45,7 @@ function handleError(res, reason, message, code) {
  */
 
 app.get("/api/contacts", function(req, res){
-  db.collection(CONTACTS_COLLECION).find({}).toArray(function(err, docs) {
+  db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) { //freak the fuck out //
       handleError(res, err.message, "Failed to get contacts.");
     } else {
