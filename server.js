@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 var db;
 
 // connect to the database BEFORE starting the application server - makes sense! //
-mongo.mongoClient.connect(process.env.MONGODB_URI, function (err, database) {
+mongodb.mongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
